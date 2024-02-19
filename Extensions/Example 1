@@ -1,0 +1,27 @@
+fun main() {
+    val list = mutableListOf(1, "one","two","104",4, 5)
+    list.toStringWithSeparator()
+    val string = "Hello, World!!!"
+    1.isSimple()
+    1F.isSimple()
+    string.deletePunctuation()
+    "afwfwa".objectInfo()
+    1.objectInfo()
+    list.objectInfo()
+}
+
+fun <T> List<T>.toStringWithSeparator() {
+    println(this.joinToString(", "))
+}
+
+fun Number.isSimple() {
+    println(this is Int)
+}
+
+fun String.deletePunctuation() {
+    println(this.replace(Regex("[^a-zA-Z0-9 ]"), ""))
+}
+
+fun Any.objectInfo() {
+    println("Object type is ${this.javaClass.simpleName}")
+}
